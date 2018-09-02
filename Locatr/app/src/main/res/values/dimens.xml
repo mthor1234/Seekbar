@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="acitvity_horizontal_margin">16dp</dimen>
+    <dimen name="acitvity_vertical_margin">16dp</dimen>
+    <dimen name="map_inset_margin">100dp</dimen>
+</resources>

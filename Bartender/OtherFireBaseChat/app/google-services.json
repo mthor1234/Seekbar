@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "2704763733",
+    "firebase_url": "https://chatapp-e7c7a.firebaseio.com",
+    "project_id": "chatapp-e7c7a",
+    "storage_bucket": "chatapp-e7c7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2704763733:android:a6644fccbe4d0fb6",
+        "android_client_info": {
+          "package_name": "async.crash.com.otherfirebasechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2704763733-4ql58ds6so8vefjbnvnt580ljhnm0or8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsgkh2aKADEq6ydtlNMcBViw83k2Btbx0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BartenderQuiz</string>
+
+    <!-- Navigation Drawer Stuff! -->
+    <!-- Nav drawer titles. Can be accessed programaticaly using a String[] -->
+    <string-array name="nav_drawer_titles">
+        <item>Categories</item>
+        <item>Settings</item>
+    </string-array>
+    <!-- Nav drawer icons. Can be accessed pragmatically using a TypedArray[] -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_launcher_background</item>
+        <item>@drawable/ic_launcher_foreground</item>
+    </array>
+    <!-- End nav drawer stuff -->
+
+</resources>

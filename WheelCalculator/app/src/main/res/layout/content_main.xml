@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="async.crash.com.wheelcalculator.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:id="@+id/tv_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp"
+        app:layout_constraintRight_toLeftOf="@id/et_width"
+        android:text="Size:"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/et_width"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textSize="20sp"
+        android:maxLength="3"
+        app:layout_constraintRight_toLeftOf="@id/tv_slash"
+        app:layout_constraintTop_toTopOf="@id/tv_size"
+        app:layout_constraintBottom_toBottomOf="@id/tv_size"/>
+
+    <TextView
+        android:id="@+id/tv_slash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/tv_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toRightOf="@id/et_width" />
+
+
+
+    <EditText
+        android:id="@+id/et_aspect_ratio"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:maxLength="2"
+        app:layout_constraintLeft_toRightOf="@id/tv_slash"
+        app:layout_constraintTop_toTopOf="@id/tv_size"
+        app:layout_constraintBottom_toBottomOf="@id/tv_size"
+        android:inputType="number" />
+
+
+    <TextView
+        android:id="@+id/tv_r"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/et_aspect_ratio"
+        app:layout_constraintTop_toTopOf="@id/tv_size"
+        app:layout_constraintBottom_toBottomOf="@id/tv_size"
+        android:text="R" />
+
+
+    <EditText
+        android:id="@+id/et_inner_radius"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textSize="20sp"
+        android:maxLength="2"
+        app:layout_constraintLeft_toRightOf="@id/tv_r"
+        app:layout_constraintTop_toTopOf="@id/tv_size"
+        app:layout_constraintBottom_toBottomOf="@id/tv_size"/>
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textAlignment="gravity"
+        app:layout_constraintTop_toBottomOf="@id/et_aspect_ratio" />
+
+    <TextView
+        android:id="@+id/tv_converted_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Converted Size:"
+        android:layout_marginTop="20dp"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn_calculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height"
+        app:layout_constraintTop_toBottomOf="@id/tv_converted_size"
+        app:layout_constraintStart_toStartOf="@id/tv_converted_size" />
+
+    <TextView
+        android:id="@+id/tv_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Width"
+        app:layout_constraintTop_toBottomOf="@id/tv_height"
+        app:layout_constraintStart_toStartOf="@id/tv_converted_size" />
+
+    <TextView
+        android:id="@+id/tv_inner_radius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Radius"
+        app:layout_constraintTop_toBottomOf="@id/tv_width"
+        app:layout_constraintStart_toStartOf="@id/tv_converted_size" />
+
+    <TextView
+        android:id="@+id/tv_sidewall_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sidewall Height"
+        app:layout_constraintTop_toBottomOf="@id/tv_inner_radius"
+        app:layout_constraintStart_toStartOf="@id/tv_converted_size" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/rel_layout_tireholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_sidewall_height">
+
+
+    <RelativeLayout
+        android:id="@+id/rel_layout_frontview_tire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+    <ImageView
+        android:id="@+id/iv_front_tire_tread"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/tread_without_mark" />
+
+    <ImageView
+        android:id="@+id/iv_front_tire_sidewall"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/sidewall_without_mark" />
+
+    <ImageView
+        android:id="@+id/iv_front_tire_rim"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rim_wthout_mark" />
+
+        <TextView
+            android:id="@+id/tv_rimsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Text"
+            android:layout_toRightOf="@id/iv_front_tire_rim"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_sidewall_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_front_tire_sidewall"
+            android:layout_toRightOf="@id/iv_front_tire_sidewall"
+            android:text="Sidewall Text" />
+
+        <TextView
+            android:id="@+id/tv_tire_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_front_tire_tread"
+            android:text="Tread Text" />
+
+        <TextView
+            android:id="@+id/tv_tire_width"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="71dp"
+            android:scaleType="centerCrop"
+            android:layout_toEndOf="@+id/iv_front_tire_tread"
+            android:text="Width Text" />
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_layout_sideview_tire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_layout_frontview_tire"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/iv_sideview_tire"
+                android:layout_width="75dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:background="@drawable/width_tire" />
+
+            <!--<ImageView-->
+                <!--android:id="@+id/iv_sideview_circle"-->
+                <!--android:layout_width="15dp"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_alignStart="@+id/iv_sideview_line"-->
+                <!--android:adjustViewBounds="true"-->
+                <!--android:background="@drawable/circle"-->
+                <!--android:baselineAlignBottom="@id/iv_sideview_line" />-->
+
+            <ImageView
+                android:id="@+id/iv_sideview_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="85dp"
+                android:rotation="180"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/iv_sideview_tire"
+                android:layout_alignBottom="@id/iv_sideview_tire"
+                android:background="@drawable/curlybrace" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>
